@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator | Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/Screenshot 2026-08-28 092220.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div id="button-btn">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <h3 class="calculator-title">Scientific Calculator</h3>
+        <div class="link-container">
+          <div id="calculator">
+            <h4 id="hcalc">Calculator</h4>
+            <a href="index.html">Standard</a>
+            <a href="scientific.html">Scientific</a>
+            <a href="graphing.html">Graphing</a>
+            <a href="programmer.html">Programmer</a>
+            <a href="date.html">Date Calculation</a>
+          </div>
+        </div>
+        <form id="scientific-form">
+          <div class="display">
+            <input type="text" id="display" value="0" readonly />
+          </div>
+
+          <!-- Scientific functions -->
+          <div class="button">
+            <input
+              type="button"
+              value="DEG"
+              id="angle-mode"
+              onclick="toggleAngleMode()"
+            />
+            <input type="button" value="sin" onclick="applyFunction('sin')" />
+            <input type="button" value="cos" onclick="applyFunction('cos')" />
+            <input type="button" value="tan" onclick="applyFunction('tan')" />
+            <input type="button" value="π" onclick="appendConstant('pi')" />
+          </div>
+
+          <div class="button">
+            <input type="button" value="x²" onclick="applyFunction('square')" />
+            <input type="button" value="x³" onclick="applyFunction('cube')" />
+            <input type="button" value="√" onclick="applyFunction('sqrt')" />
+            <input type="button" value="∛" onclick="applyFunction('cbrt')" />
+            <input type="button" value="e" onclick="appendConstant('e')" />
+          </div>
+
+          <div class="button">
+            <input type="button" value="log" onclick="applyFunction('log')" />
+            <input type="button" value="ln" onclick="applyFunction('ln')" />
+            <input
+              type="button"
+              value="n!"
+              onclick="applyFunction('factorial')"
+            />
+            <input
+              type="button"
+              value="1/x"
+              onclick="applyFunction('reciprocal')"
+            />
+            <input type="button" value="%" onclick="applyFunction('percent')" />
+          </div>
+
+          <div class="button">
+            <input
+              type="button"
+              value="AC"
+              onclick="clearDisplay()"
+              class="operator"
+            />
+            <input
+              type="button"
+              value="DE"
+              onclick="deleteLast()"
+              class="operator"
+            />
+            <input type="button" value="(" onclick="appendParenthesis('(')" />
+            <input type="button" value=")" onclick="appendParenthesis(')')" />
+            <input
+              type="button"
+              value="/"
+              onclick="appendOperator('/')"
+              class="operator"
+            />
+          </div>
+
+          <div class="button">
+            <input type="button" value="7" onclick="appendNumber('7')" />
+            <input type="button" value="8" onclick="appendNumber('8')" />
+            <input type="button" value="9" onclick="appendNumber('9')" />
+            <input
+              type="button"
+              value="*"
+              onclick="appendOperator('*')"
+              class="operator"
+            />
+            <input
+              type="button"
+              value="xʸ"
+              onclick="appendOperator('^')"
+              class="operator"
+            />
+          </div>
+
+          <div class="button">
+            <input type="button" value="4" onclick="appendNumber('4')" />
+            <input type="button" value="5" onclick="appendNumber('5')" />
+            <input type="button" value="6" onclick="appendNumber('6')" />
+            <input
+              type="button"
+              value="-"
+              onclick="appendOperator('-')"
+              class="operator"
+            />
+            <input
+              type="button"
+              value="sin⁻¹"
+              onclick="applyFunction('asin')"
+            />
+          </div>
+
+          <div class="button">
+            <input type="button" value="1" onclick="appendNumber('1')" />
+            <input type="button" value="2" onclick="appendNumber('2')" />
+            <input type="button" value="3" onclick="appendNumber('3')" />
+            <input
+              type="button"
+              value="+"
+              onclick="appendOperator('+')"
+              class="operator"
+            />
+            <input
+              type="button"
+              value="cos⁻¹"
+              onclick="applyFunction('acos')"
+            />
+          </div>
+
+          <div class="button">
+            <input type="button" value="00" onclick="appendNumber('00')" />
+            <input type="button" value="0" onclick="appendNumber('0')" />
+            <input type="button" value="." onclick="appendDecimal()" />
+            <input
+              type="button"
+              value="="
+              onclick="calculate()"
+              class="equal"
+            />
+            <input
+              type="button"
+              value="tan⁻¹"
+              onclick="applyFunction('atan')"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@15.1.1/lib/browser/math.js"></script>
+    <script src="scientific.js"></script>
+  </body>
+</html>

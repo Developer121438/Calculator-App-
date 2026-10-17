@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmer Calculator | Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/Screenshot 2026-08-28 092220.png" />
+    <script src="programmer.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="calculator programmer-calculator">
+        <!-- Header -->
+        <div class="programmer-header">
+          <button
+            id="programmer-menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+
+          <h3>Programmer Calculator</h3>
+        </div>
+
+        <!-- Navigation -->
+        <div class="link-container" id="programmer-navigation">
+          <div id="calculator">
+            <h4>Calculator</h4>
+
+            <a href="index.html">Standard</a>
+            <a href="scientific.html">Scientific</a>
+            <a href="graphing.html">Graphing</a>
+            <a href="programmer.html">Programmer</a>
+            <a href="date.html">Date Calculation</a>
+          </div>
+        </div>
+        <!-- Word-size selection -->
+        <div class="word-size-container">
+          <label for="word-size">Word Size:</label>
+
+          <select id="word-size">
+            <option value="8">8-bit</option>
+            <option value="16">16-bit</option>
+            <option value="32" selected>32-bit</option>
+            <option value="64">64-bit</option>
+          </select>
+
+          <span class="integer-mode">Unsigned</span>
+        </div>
+        <!-- Current operation indicator -->
+        <div class="operation-display">
+          <span id="operation-indicator" aria-live="polite"></span>
+        </div>
+        <!-- Number system display -->
+        <div class="number-systems">
+          <div class="number-row active" data-base="16">
+            <span>HEX</span>
+            <output id="hex-value">0</output>
+          </div>
+
+          <div class="number-row" data-base="10">
+            <span>DEC</span>
+            <output id="dec-value">0</output>
+          </div>
+
+          <div class="number-row" data-base="8">
+            <span>OCT</span>
+            <output id="oct-value">0</output>
+          </div>
+
+          <div class="number-row" data-base="2">
+            <span>BIN</span>
+            <output id="bin-value">0</output>
+          </div>
+        </div>
+
+        <!-- Calculator buttons -->
+        <div class="programmer-buttons">
+          <button type="button" data-action="clear">C</button>
+          <button type="button" data-action="backspace">⌫</button>
+          <button type="button" data-action="not">NOT</button>
+          <button type="button" data-action="and">AND</button>
+
+          <button type="button" data-digit="A">A</button>
+          <button type="button" data-digit="B">B</button>
+          <button type="button" data-digit="C">C</button>
+          <button type="button" data-action="or">OR</button>
+
+          <button type="button" data-digit="D">D</button>
+          <button type="button" data-digit="E">E</button>
+          <button type="button" data-digit="F">F</button>
+          <button type="button" data-action="xor">XOR</button>
+
+          <button type="button" data-digit="7">7</button>
+          <button type="button" data-digit="8">8</button>
+          <button type="button" data-digit="9">9</button>
+          <button type="button" data-action="left-shift">&lt;&lt;</button>
+
+          <button type="button" data-digit="4">4</button>
+          <button type="button" data-digit="5">5</button>
+          <button type="button" data-digit="6">6</button>
+          <button type="button" data-action="right-shift">&gt;&gt;</button>
+
+          <button type="button" data-digit="1">1</button>
+          <button type="button" data-digit="2">2</button>
+          <button type="button" data-digit="3">3</button>
+          <button type="button" data-action="equals">=</button>
+
+          <button type="button" data-digit="0" class="zero-btn">0</button>
+        </div>
+
+        <p id="programmer-message" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </body>
+</html>

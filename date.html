@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Date Calculator | Calculator App</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="date.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="calculator date-calculator">
+        <!-- Header -->
+        <div class="date-header">
+          <button
+            id="date-menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+
+          <h3>Date Calculator</h3>
+        </div>
+
+        <!-- Navigation -->
+        <div class="link-container" id="date-navigation">
+          <div id="calculator">
+            <h4>Calculator</h4>
+
+            <a href="index.html">Standard</a>
+            <a href="scientific.html">Scientific</a>
+            <a href="graphing.html">Graphing</a>
+            <a href="programmer.html">Programmer</a>
+            <a href="date.html">Date Calculation</a>
+          </div>
+        </div>
+
+        <!-- Calculator mode selection -->
+        <div class="date-tabs">
+          <button type="button" class="date-tab active" data-tab="difference">
+            Date Difference
+          </button>
+
+          <button type="button" class="date-tab" data-tab="add-subtract">
+            Add / Subtract
+          </button>
+        </div>
+
+        <!-- ==================================
+           DATE DIFFERENCE
+      ================================== -->
+
+        <section id="difference-section" class="date-section active">
+          <h4>Calculate Date Difference</h4>
+
+          <div class="date-input-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" />
+          </div>
+
+          <div class="date-input-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" />
+          </div>
+
+          <button
+            type="button"
+            id="calculate-difference"
+            class="date-primary-btn"
+          >
+            Calculate Difference
+          </button>
+
+          <!-- Results -->
+          <div class="date-result" id="difference-result" hidden>
+            <h4>Result</h4>
+
+            <div class="date-result-grid">
+              <div class="date-result-item">
+                <strong id="result-years">0</strong>
+                <span>Years</span>
+              </div>
+
+              <div class="date-result-item">
+                <strong id="result-months">0</strong>
+                <span>Months</span>
+              </div>
+
+              <div class="date-result-item">
+                <strong id="result-weeks">0</strong>
+                <span>Weeks</span>
+              </div>
+
+              <div class="date-result-item">
+                <strong id="result-days">0</strong>
+                <span>Days</span>
+              </div>
+            </div>
+
+            <p id="total-days"></p>
+          </div>
+        </section>
+
+        <!-- ==================================
+           ADD / SUBTRACT DATES
+      ================================== -->
+
+        <section id="add-subtract-section" class="date-section">
+          <h4>Add or Subtract Dates</h4>
+
+          <div class="date-input-group">
+            <label for="base-date">Select Date</label>
+            <input type="date" id="base-date" />
+          </div>
+
+          <div class="date-input-group">
+            <label for="date-operation">Operation</label>
+
+            <select id="date-operation">
+              <option value="add">Add</option>
+              <option value="subtract">Subtract</option>
+            </select>
+          </div>
+
+          <div class="date-duration-grid">
+            <div class="date-input-group">
+              <label for="add-years">Years</label>
+              <input type="number" id="add-years" min="0" value="0" />
+            </div>
+
+            <div class="date-input-group">
+              <label for="add-months">Months</label>
+              <input type="number" id="add-months" min="0" value="0" />
+            </div>
+
+            <div class="date-input-group">
+              <label for="add-weeks">Weeks</label>
+              <input type="number" id="add-weeks" min="0" value="0" />
+            </div>
+
+            <div class="date-input-group">
+              <label for="add-days">Days</label>
+              <input type="number" id="add-days" min="0" value="0" />
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="calculate-new-date"
+            class="date-primary-btn"
+          >
+            Calculate Date
+          </button>
+
+          <!-- Result -->
+          <div class="date-result" id="new-date-result" hidden>
+            <h4>Calculated Date</h4>
+            <p id="calculated-date"></p>
+          </div>
+        </section>
+
+        <!-- Error / status message -->
+        <p id="date-message" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <script src="date.js"></script>
+  </body>
+</html>

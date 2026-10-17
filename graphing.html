@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphing Calculator | Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/Screenshot 2026-08-28 092220.png" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="calculator graphing-calculator">
+        <!-- Header -->
+        <div class="graphing-header">
+          <button
+            id="graph-menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+          <h3>Graphing Calculator</h3>
+        </div>
+
+        <!-- Navigation -->
+        <div class="link-container" id="graph-navigation">
+          <div id="calculator">
+            <h4>Calculator</h4>
+
+            <a href="index.html">Standard</a>
+            <a href="scientific.html">Scientific</a>
+            <a href="graphing.html">Graphing</a>
+            <a href="programmer.html">Programmer</a>
+            <a href="date.html">Date Calculation</a>
+          </div>
+        </div>
+
+        <!-- Function inputs -->
+        <div class="graph-inputs">
+          <h4>Enter Functions</h4>
+
+          <div class="function-row">
+            <label for="function1">y₁ =</label>
+            <input
+              type="text"
+              id="function1"
+              placeholder="e.g. x^2"
+              value="x^2"
+            />
+          </div>
+
+          <div class="function-row">
+            <label for="function2">y₂ =</label>
+            <input type="text" id="function2" placeholder="e.g. sin(x)" />
+          </div>
+
+          <div class="function-row">
+            <label for="function3">y₃ =</label>
+            <input type="text" id="function3" placeholder="e.g. 2*x+3" />
+          </div>
+
+          <button type="button" id="plot-btn">Plot Graph</button>
+        </div>
+
+        <!-- Graph -->
+        <div class="graph-area">
+          <canvas id="graph-canvas"></canvas>
+        </div>
+
+        <p id="coordinates">X: 0.00 | Y: 0.00</p>
+        <!-- Graph controls -->
+        <div class="graph-controls">
+          <button type="button" id="zoom-in">Zoom +</button>
+          <button type="button" id="zoom-out">Zoom −</button>
+          <button type="button" id="reset-view">Reset</button>
+          <button type="button" id="clear-graph">Clear</button>
+          <button type="button" id="download-graph">Download</button>
+        </div>
+
+        <p id="graph-message" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- Math.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@15.1.1/lib/browser/math.js"></script>
+
+    <!-- Graphing logic -->
+    <script src="graphing.js"></script>
+  </body>
+</html>
