@@ -185,15 +185,13 @@ Follow these steps to run the project locally.
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/Developer121438/Calculator-App-/
 ```
-
-Replace `YOUR_USERNAME` and `YOUR_REPOSITORY` with your actual GitHub username and repository name.
 
 ### 2. Navigate to the Project Folder
 
 ```bash
-cd YOUR_REPOSITORY
+cd Calaulator-App-
 ```
 
 ### 3. Open the Application
