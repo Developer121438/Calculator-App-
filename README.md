@@ -155,21 +155,23 @@ No frontend framework is required.
 
 ```text
 Calculator-App/
-│
+│---Images
+|---README.md
 ├── index.html
+├── script.js
 ├── scientific.html
-├── graphing.html
-├── programmer.html
-├── date.html
-│
-├── style.css
-│
 ├── scientific.js
-├── graphing.js
+├── programmer.html
+│---programmer.js
+│── programmer.js
 ├── programmer.js
+├── graphing.html
+├---graphing.js
+├── date.html
 ├── date.js
-│
-└── README.md
+|
+└── style.css
+
 ```
 
 Note: The Standard Calculator's JavaScript may be included directly in `index.html` or stored in a separate JavaScript file, depending on the project structure.
@@ -337,7 +339,7 @@ Developing this project provided practical experience in:
 
 ## Live Demo
 
-**Live Website:** [View Calculator App](https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/)
+**Live Website:** [View Calculator App](https://developer121438.github.io/Calculator-App-/)
 
 Replace the placeholder URL with your actual GitHub Pages link after deployment.
 
