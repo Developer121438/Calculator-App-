@@ -11,13 +11,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+#calculator-form .button {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+#calculator-form .button input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+#calculator-form .button:last-child input:first-child {
+  grid-column: span 2;
+}
+
+#calculator-form .memory {
+  background-color: #526b52;
+  color: white;
+  font-weight: 600;
+}
+
+#calculator-form .memory:hover {
+  background-color: #638563;
+}
+.calculator:not(.scientific-calculator):not(.graphing-calculator):not(
+    .programmer-calculator
+  ):not(.date-calculator) {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.calculator:not(.scientific-calculator):not(.graphing-calculator):not(
+    .programmer-calculator
+  ):not(.date-calculator) {
+  width: 400px;
+  max-width: 100%;
 }
 .calculator {
   background-color: rgb(49, 56, 49);
   padding: 20px;
   border-radius: 10px;
   z-index: 1;
-  height: 100vh;
+  height: auto;
   position: relative;
 }
 .calculator form input {
@@ -35,12 +76,39 @@
   cursor: pointer;
   margin: 1px;
 }
+
+#calculator-form .button input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
 form .display {
   display: flex;
   justify-content: flex-end;
   margin: 20px;
   margin-bottom: 40px;
   margin-top: 40px;
+}
+/* Standard calculator memory indicator */
+#calculator-form .display {
+  position: relative;
+}
+
+#memory-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  color: #4cff4c;
+  font-size: 16px;
+  font-weight: bold;
+
+  display: none;
+}
+
+#memory-indicator.active {
+  display: block;
 }
 form .display input {
   text-align: right;
@@ -638,8 +706,9 @@ form .display input {
   margin-top: 15px;
 }
 #coordinates {
+  display: flex;
   position: relative;
-  right: -455px;
+  right: -15px;
   top: 4px;
   color: #36fb0f;
 }
@@ -789,6 +858,12 @@ form .display input {
   left: 15px;
   width: 250px;
   max-width: 85%;
+}
+.link-container a.active {
+  color: #4cff4c;
+  background-color: #414d41;
+  font-weight: 600;
+  border-left: 3px solid #4cff4c;
 }
 
 /* Number systems */

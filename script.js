@@ -20,7 +20,16 @@ document.addEventListener("click", function (event) {
 const display = document.getElementById("display");
 
 let justCalculated = false;
+const memoryIndicator = document.getElementById("memory-indicator");
 
+let memory = 0;
+
+let hasMemory = false;
+
+// Update memory indicator visibility
+function updateMemoryIndicator() {
+  memoryIndicator.classList.toggle("active", hasMemory);
+}
 // Add numbers
 function appendNumber(number) {
   if (display.value === "Error" || justCalculated) {
@@ -114,6 +123,83 @@ function calculate() {
   }
 }
 
+// ===================================
+// STANDARD CALCULATOR MEMORY FUNCTIONS
+// ===================================
+
+// Get the current numerical value
+function getCurrentValue() {
+  const expression = display.value;
+
+  if (expression === "Error") {
+    return null;
+  }
+
+  // Reject incomplete expressions
+  if (/[+\-*/.]$/.test(expression)) {
+    return null;
+  }
+
+  // Evaluate expressions before using memory
+  if (/[+\-*/]/.test(expression.slice(1))) {
+    calculate();
+    if (display.value === "Error") {
+      return null;
+    }
+  }
+
+  const value = Number(display.value);
+  return Number.isFinite(value) ? value : null;
+}
+
+// MC - Clear memory
+function memoryClear() {
+  memory = 0;
+  hasMemory = false;
+  updateMemoryIndicator();
+}
+// MR - Recall memory
+function memoryRecall() {
+  display.value = String(memory);
+  justCalculated = true;
+}
+
+// M+ - Add displayed value to memory
+function memoryAdd() {
+  const value = getCurrentValue();
+
+  if (value === null) return;
+
+  memory += value;
+  justCalculated = true;
+
+  hasMemory = true;
+  updateMemoryIndicator();
+}
+// M- - Subtract displayed value from memory
+function memorySubtract() {
+  const value = getCurrentValue();
+
+  if (value === null) return;
+
+  memory -= value;
+  justCalculated = true;
+
+  hasMemory = true;
+  updateMemoryIndicator();
+}
+// MS - Store displayed value in memory
+function memoryStore() {
+  const value = getCurrentValue();
+
+  if (value === null) return;
+
+  memory = value;
+  justCalculated = true;
+
+  hasMemory = true;
+  updateMemoryIndicator();
+}
 // Keyboard support
 document.addEventListener("keydown", function (event) {
   const key = event.key;

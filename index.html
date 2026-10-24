@@ -19,7 +19,7 @@
         <div class="link-container">
           <div id="calculator">
             <h4 id="hcalc">Calculator</h4>
-            <a href="index.html">Standard</a>
+            <a href="index.html" class="active">Standard</a>
             <a href="scientific.html">Scientific</a>
             <a href="graphing.html">Graphing</a>
             <a href="programmer.html">Programmer</a>
@@ -28,9 +28,11 @@
         </div>
         <form id="calculator-form">
           <div class="display">
+            <span id="memory-indicator">M</span>
             <input type="text" id="display" name="display" value="0" readonly />
           </div>
 
+          <!-- Row 1 -->
           <div class="button">
             <input
               type="button"
@@ -56,8 +58,15 @@
               onclick="appendOperator('/')"
               class="operator"
             />
+            <input
+              type="button"
+              value="MC"
+              onclick="memoryClear()"
+              class="memory"
+            />
           </div>
 
+          <!-- Row 2 -->
           <div class="button">
             <input type="button" value="7" onclick="appendNumber('7')" />
             <input type="button" value="8" onclick="appendNumber('8')" />
@@ -68,8 +77,15 @@
               onclick="appendOperator('*')"
               class="operator"
             />
+            <input
+              type="button"
+              value="MR"
+              onclick="memoryRecall()"
+              class="memory"
+            />
           </div>
 
+          <!-- Row 3 -->
           <div class="button">
             <input type="button" value="4" onclick="appendNumber('4')" />
             <input type="button" value="5" onclick="appendNumber('5')" />
@@ -80,8 +96,15 @@
               onclick="appendOperator('-')"
               class="operator"
             />
+            <input
+              type="button"
+              value="M+"
+              onclick="memoryAdd()"
+              class="memory"
+            />
           </div>
 
+          <!-- Row 4 -->
           <div class="button">
             <input type="button" value="1" onclick="appendNumber('1')" />
             <input type="button" value="2" onclick="appendNumber('2')" />
@@ -92,8 +115,15 @@
               onclick="appendOperator('+')"
               class="operator"
             />
+            <input
+              type="button"
+              value="M-"
+              onclick="memorySubtract()"
+              class="memory"
+            />
           </div>
 
+          <!-- Row 5 -->
           <div class="button">
             <input type="button" value="00" onclick="appendNumber('00')" />
             <input type="button" value="0" onclick="appendNumber('0')" />
@@ -102,6 +132,12 @@
               value="="
               onclick="calculate()"
               class="equal"
+            />
+            <input
+              type="button"
+              value="MS"
+              onclick="memoryStore()"
+              class="memory"
             />
           </div>
         </form>
